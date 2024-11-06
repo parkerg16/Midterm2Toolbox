@@ -151,6 +151,7 @@ def draw_graph_and_mst(graph, mst_edges):
 
     plt.show()
 
+
 # Example usage:
 if __name__ == "__main__":
     # Create a graph

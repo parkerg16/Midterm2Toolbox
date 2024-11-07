@@ -85,11 +85,57 @@ def print_knapsack_solution(weights, profits, capacity):
     print(Fore.CYAN + f"Total Weight: {total_weight}" + Style.RESET_ALL)
 
 
-# Example usage:
+def print_excel_format(weights, profits, capacity):
+    if len(weights) != len(profits):
+        print("Error: The number of weights and profits must be the same.")
+        return
+
+    dp_table, max_profit, items = knapsack(weights, profits, capacity)
+    n = len(weights)
+
+    # Print headers with tab separation for Excel
+    print("Capacity\t" + "\t".join(str(i) for i in range(capacity + 1)))
+
+    # Print each row with item information and values
+    for i in range(n + 1):
+        if i == 0:
+            row_label = "Initial"
+        else:
+            row_label = f"Item {i} (W={weights[i - 1]}, P={profits[i - 1]})"
+
+        # Print row with tab separation
+        row_values = "\t".join(str(dp_table[i][w]) for w in range(capacity + 1))
+        print(f"{row_label}\t{row_values}")
+
+    # Print summary information
+    print("\nSolution Summary")
+    print(f"Maximum Profit:\t{max_profit}")
+    print("\nSelected Items:")
+    total_weight = 0
+    for i in items:
+        print(f"Item {i + 1}\tWeight: {weights[i]}\tProfit: {profits[i]}")
+        total_weight += weights[i]
+    print(f"Total Weight:\t{total_weight}")
+
+
+def print_colored_and_excel(weights, profits, capacity):
+    # Print both colored console output and Excel-compatible format
+    print("=" * 50)
+    print("=== COLORED CONSOLE OUTPUT ===")
+    print("=" * 50)
+    print_knapsack_solution(weights, profits, capacity)
+
+    print("\n" + "=" * 50)
+    print("=== EXCEL-COMPATIBLE OUTPUT (Copy from here) ===")
+    print("=" * 50)
+    print_excel_format(weights, profits, capacity)
+    print("=" * 50)
+
+
 if __name__ == "__main__":
     # Define your weights, profits, and capacity here
-    weights = [2, 3, 4, 5]
-    profits = [3, 4, 5, 6]
-    capacity = 5
+    weights = [1, 2, 3, 5]
+    profits = [1, 6, 10, 16]
+    capacity = 7
 
-    print_knapsack_solution(weights, profits, capacity)
+    print_colored_and_excel(weights, profits, capacity)

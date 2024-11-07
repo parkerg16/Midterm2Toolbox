@@ -209,6 +209,6 @@ def hierarchy_pos(G, root, width=1.0, vert_gap=0.2, vert_loc=0, xcenter=0.5,
 if __name__ == "__main__":
     # Define your keys and frequencies here
     keys = ['A', 'B', 'C', 'D']
-    freq = [0.1, 0.2, 0.4, 0.3]
+    freq = [0.4, 0.15, 0.35, 0.1]
 
     print_obst_solution(keys, freq)

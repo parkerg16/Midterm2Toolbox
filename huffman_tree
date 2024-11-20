@@ -1,0 +1,26 @@
+// Huffman Tree
+digraph {
+	rankdir=TB
+	4385865072 [label=1.00 shape=circle]
+	4385865072 -> 4388943200 [label=0]
+	4388943200 [label="A
+0.40" shape=box]
+	4385865072 -> 4385865120 [label=1]
+	4385865120 [label=0.60 shape=circle]
+	4385865120 -> 4372358224 [label=0]
+	4372358224 [label=0.25 shape=circle]
+	4372358224 -> 4385865504 [label=0]
+	4385865504 [label="B
+0.10" shape=box]
+	4372358224 -> 4385865360 [label=1]
+	4385865360 [label="D
+0.15" shape=box]
+	4385865120 -> 4388942384 [label=1]
+	4388942384 [label=0.35 shape=circle]
+	4388942384 -> 4385865216 [label=0]
+	4385865216 [label="_
+0.15" shape=box]
+	4388942384 -> 4385865264 [label=1]
+	4385865264 [label="C
+0.20" shape=box]
+}

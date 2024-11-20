@@ -1,0 +1,7 @@
+// Heap
+digraph {
+	rankdir=LR
+	0 [label="Internal: 0.25" color=lightgreen shape=circle style=filled]
+	1 [label="Internal: 0.35" color=lightgreen shape=circle style=filled]
+	2 [label="A: 0.40" color=lightblue shape=box style=filled]
+}
